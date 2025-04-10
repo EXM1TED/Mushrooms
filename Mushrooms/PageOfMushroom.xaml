@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mushrooms.PageOfMushroom">
+    <Grid
+        Margin="20, 0, 0, 0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+
+        <Button
+            Grid.Row="0"
+            WidthRequest="90"
+            HeightRequest="30"
+            Text="Назад"
+            BackgroundColor="WhiteSmoke"
+            x:Name="GoBack"
+            TextColor="Black"
+            Clicked="GoBack_Clicked"
+            HorizontalOptions="Start"/>
+
+        <StackLayout
+            Orientation="Horizontal"
+            VerticalOptions="Center"
+                            Grid.Row="1">
+            <StackLayout
+                Orientation="Vertical">
+                <Entry
+                    x:Name="NameOfMushroom"
+                    Text="{Binding Name}"
+                    FontSize="26"
+                    FontAttributes="Bold"/>
+                <Entry
+                    x:Name="LatinNameLabel"
+                    FontSize="14"/>
+            </StackLayout>
+        </StackLayout>
+
+        <VerticalStackLayout
+            Grid.Row="2"
+            HorizontalOptions="Start">
+            <Image
+                x:Name="ImageOfMushroom"
+                Margin="0, 0, 0, 5"
+                Source="{Binding Image}"
+                WidthRequest="490"
+                HeightRequest="110"
+                HorizontalOptions="Start"/>
+
+            <Editor
+                x:Name="Description"
+                Text="{Binding Description}"
+                FontSize="18"
+                WidthRequest="490"
+                HeightRequest="290"
+                HorizontalOptions="Start"/>
+            <Button
+                x:Name="ButtonSelectImage"
+                WidthRequest="130"
+                LineBreakMode="WordWrap"
+                HeightRequest="55"
+                Text="Выбрать изображение"
+                Margin="0, 10, 0, 0"
+                Clicked="SelectImage"/>
+            <Button
+                x:Name="ButtonUpdate"
+                WidthRequest="130"
+                LineBreakMode="WordWrap"
+                HeightRequest="45"
+                Text="Обновить"
+                Margin="0, 10, 0, 0"
+                Clicked="Update_Clicked"/>
+            <Button
+                x:Name="ButtonDelete"
+                WidthRequest="130"
+                LineBreakMode="WordWrap"
+                HeightRequest="45"
+                Text="Удалить"
+                Margin="0, 10, 0, 0"
+                Clicked="ButtonDelete_Clicked"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
